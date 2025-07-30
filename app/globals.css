@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+
+@theme
+{
+    --color-white: #FFFCF7;
+    --color-black: #192025;
+    --color-main: #C096E9;
+    --color-highlight: #C096E988;
+}
+
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 html {
