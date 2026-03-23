@@ -29,7 +29,7 @@ export default function NavBar() {
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<path
-							d="M36.8591 0V22.0418H28.9309V12.8169L21.6518 33H15.2536L7.92819 12.7713L7.92818 33H0L5.72205e-06 0H9.36546L18.4991 22.1673L27.54 0H36.8591Z"
+							d="M36.8591 0V20.0418H28.9309V12.8169L21.6518 33H15.2536L7.92819 12.7713L7.92818 33H0L5.72205e-06 0H9.36546L18.4991 22.1673L27.54 0H36.8591Z"
 							className="fill-main"
 						/>
 						<path
@@ -40,7 +40,7 @@ export default function NavBar() {
 				</Link>
 			</div>
 			<div className="flex w-full h-full justify-end items-center">
-				<ul className="flex mx-4">
+				<ul className="flex mx-4 font-normal">
 					{navLinks.map(([page, href], i) => (
 						<li
 							key={i}

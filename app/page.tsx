@@ -1,7 +1,12 @@
 export default function Home() {
 	return (
-		<div>
-			<h1>HELLO WORLD</h1>
+		<div className="max-w-6xl h-screen grid place-items-center m-auto px-8">
+			<div>
+				<h1 className="text-7xl font-black tracking-tighter">
+					COOL LANDING PAGE
+				</h1>
+				<p className="text-center">coming soon maybe</p>
+			</div>
 		</div>
 	);
 }

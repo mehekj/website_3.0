@@ -13,5 +13,5 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 html {
-    @apply bg-white dark:bg-black text-black dark:text-white
+    @apply bg-white dark:bg-black text-black dark:text-white font-light
 }
