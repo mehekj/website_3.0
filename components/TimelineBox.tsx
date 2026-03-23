@@ -22,7 +22,7 @@ export default function TimelineBox({ entry }: { entry: TimelineEntry }) {
 				{entry.start} - {entry.end}
 			</p>
 			<div
-				className={`border-1 p-4 my-1 hover:shadow-[5px_5px] hover:border-main shadow-black dark:shadow-white hover:shadow-main transition duration-200 ${open ? "shadow-[5px_5px]" : ""}`}
+				className={`group border-1 p-4 my-1 hover:shadow-[5px_5px] hover:border-main shadow-black dark:shadow-white hover:shadow-main transition duration-200 ${open ? "shadow-[5px_5px]" : ""}`}
 			>
 				<div
 					className={`cursor-pointer flex items-center justify-between ${open ? "mb-4" : ""}`}
@@ -36,9 +36,17 @@ export default function TimelineBox({ entry }: { entry: TimelineEntry }) {
 						<h4 className="font-medium">{entry.subtitle}</h4>
 					</div>
 					{open ? (
-						<ChevronDown width={32} height={32} />
+						<ChevronDown
+							width={32}
+							height={32}
+							className="group-hover:text-main transition duration-200"
+						/>
 					) : (
-						<ChevronRight width={32} height={32} />
+						<ChevronRight
+							width={32}
+							height={32}
+							className="group-hover:text-main transition duration-200"
+						/>
 					)}
 				</div>
 				{open && (

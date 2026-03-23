@@ -1,6 +1,6 @@
 export default function Home() {
 	return (
-		<div className="max-w-6xl h-screen grid place-items-center m-auto px-8">
+		<div className="max-w-6xl grid place-items-center m-auto px-8">
 			<div>
 				<h1 className="text-7xl font-black tracking-tighter">
 					COOL LANDING PAGE

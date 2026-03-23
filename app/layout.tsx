@@ -16,9 +16,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className={`${poppins.className}`}>
-			<body>
+			<body className="min-h-screen flex flex-col justify-between">
 				<NavBar />
 				<div>{children}</div>
+				<footer className="bottom-0 p-1 w-full text-center text-sm uppercase border-t-1">
+					Made by Mehek Jethani 2026
+				</footer>
 			</body>
 		</html>
 	);
