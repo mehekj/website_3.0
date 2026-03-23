@@ -16,7 +16,7 @@ export default function NavBar() {
 	];
 
 	return (
-		<nav className="flex border-black dark:border-white border-b-1 items-center justify-between h-14">
+		<nav className="flex border-b-1 items-center justify-between h-14">
 			<div className="h-full">
 				<Link
 					href={"/"}
@@ -40,7 +40,7 @@ export default function NavBar() {
 				</Link>
 			</div>
 			<div className="flex w-full h-full justify-end items-center">
-				<ul className="flex mx-4 font-normal">
+				<ul className="flex mx-4 font-medium">
 					{navLinks.map(([page, href], i) => (
 						<li
 							key={i}

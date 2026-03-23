@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function About() {
 	return (
 		<div className="max-w-6xl m-auto px-8 py-32">
-			<div className="w-96 h-96 relative overflow-hidden float-start mr-12 mb-12 border-1 border-black dark:border-white shadow-[10px_10px] shadow-black dark:shadow-white">
+			<div className="w-96 h-96 relative overflow-hidden float-start mr-12 mb-12 border-1 shadow-[10px_10px] shadow-black dark:shadow-white">
 				<Image
 					src="/profile.jpeg"
 					alt="profile pic"
@@ -11,7 +11,7 @@ export default function About() {
 					className="object-cover scale-150"
 				/>
 			</div>
-			<h1 className="font-bold text-4xl">Hello! I'm Mehek</h1>
+			<h1 className="font-bold text-5xl">Hello! I'm Mehek</h1>
 			<p className="my-4">
 				I'm a 24 year old software engineer currently working at Infinity Ward
 				on the Call of Duty franchise. At IW, I'm on the rendering team and I
