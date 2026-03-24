@@ -10,7 +10,9 @@ export interface ProjectInfo {
 }
 
 export default function ProjectCard({ info }: { info: ProjectInfo }) {
-	const gridCols = info.span ? `col-span-${info.span}` : "col-span-1";
+	const gridCols = info.span
+		? `col-span-${info.span} grid-cols-${info.span}`
+		: "col-span-1 grid-cols-1";
 
 	return (
 		<div
