@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function About() {
 	return (
 		<div className="max-w-6xl m-auto px-8 py-32">
-			<div className="w-96 h-96 relative overflow-hidden float-start mr-12 mb-12 border-1 shadow-[10px_10px] shadow-black dark:shadow-white">
+			<div className="peer w-96 h-96 relative overflow-hidden float-start mr-12 mb-12 border-1 hover:translate-[5px] shadow-[10px_10px] hover:shadow-[0px_0px] shadow-black dark:shadow-white transition duration-200 cursor-pointer hover:shadow-main hover:border-main">
 				<Image
 					src="/profile.jpeg"
 					alt="profile pic"
@@ -11,6 +11,7 @@ export default function About() {
 					className="object-cover scale-150"
 				/>
 			</div>
+			<div className="opacity-0 peer-hover:opacity-20 pointer-events-none absolute bg-main w-screen h-screen left-0 top-14"></div>
 			<h1 className="font-bold text-5xl">Hello! I&apos;m Mehek</h1>
 			<p className="my-4">
 				I&apos;m a 24 year old software engineer currently working at Infinity
