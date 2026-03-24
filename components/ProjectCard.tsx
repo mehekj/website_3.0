@@ -6,13 +6,11 @@ export interface ProjectInfo {
 	title: string;
 	blurb: string;
 	image: string;
-	span?: number;
+	full?: boolean;
 }
 
 export default function ProjectCard({ info }: { info: ProjectInfo }) {
-	const gridCols = info.span
-		? `col-span-${info.span} grid-cols-${info.span}`
-		: "col-span-1 grid-cols-1";
+	const gridCols = info.full ? `col-span-2` : "col-span-1";
 
 	return (
 		<div

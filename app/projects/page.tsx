@@ -16,7 +16,7 @@ export default function Projects() {
 						title: "Project 1",
 						blurb: "Next.js, Tailwind CSS, TypeScript",
 						image: "/profile.jpeg",
-						span: 2,
+						full: true,
 					}}
 				/>
 				<ProjectCard
