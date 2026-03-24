@@ -22,7 +22,7 @@ export default function TimelineBox({ entry }: { entry: TimelineEntry }) {
 				{entry.start} - {entry.end}
 			</p>
 			<div
-				className={`group border-1 p-4 my-1 hover:shadow-[5px_5px] hover:border-main shadow-black dark:shadow-white hover:shadow-main transition duration-200 overflow-hidden ${open ? "shadow-[5px_5px]" : ""}`}
+				className={`group border-1 p-4 my-1 hover:translate-[-2px] hover:shadow-[5px_5px] hover:border-main shadow-black dark:shadow-white hover:shadow-main transition duration-200 overflow-hidden ${open ? "shadow-[5px_5px] translate-[-2px]" : ""}`}
 				onPointerDown={(e) => {
 					e.stopPropagation();
 					setOpen(!open);
@@ -41,6 +41,9 @@ export default function TimelineBox({ entry }: { entry: TimelineEntry }) {
 				</div>
 				<div
 					className={`transition-all duration-200 ${open ? " max-h-screen" : " max-h-0"}`}
+					onPointerDown={(e) => {
+						e.stopPropagation();
+					}}
 				>
 					<ul className={`list-disc list-inside px-2 pt-4`}>
 						{entry.bullets.map((bullet, index) => (

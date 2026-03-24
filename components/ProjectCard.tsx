@@ -12,7 +12,7 @@ export interface ProjectInfo {
 export default function ProjectCard({ info }: { info: ProjectInfo }) {
 	return (
 		<div
-			className={`group border-[0.5] my-1 hover:shadow-[5px_5px] hover:border-main shadow-black dark:shadow-white hover:shadow-main transition duration-200 cursor-pointer col-span-${info.span ? info.span : 1}`}
+			className={`group border-[0.5] my-1 hover:translate-[-2px] hover:shadow-[5px_5px] hover:border-main shadow-black dark:shadow-white hover:shadow-main transition duration-200 cursor-pointer col-span-${info.span ? info.span : 1}`}
 		>
 			<div className="relative overflow-hidden border-[0.5] border-inherit min-h-72">
 				<Image
