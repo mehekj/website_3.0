@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { ChevronDown, ChevronRight } from "react-feather";
+import { ChevronRight } from "react-feather";
 
 export interface TimelineEntry {
 	start: string;
@@ -22,40 +22,32 @@ export default function TimelineBox({ entry }: { entry: TimelineEntry }) {
 				{entry.start} - {entry.end}
 			</p>
 			<div
-				className={`group border-1 p-4 my-1 hover:shadow-[5px_5px] hover:border-main shadow-black dark:shadow-white hover:shadow-main transition duration-200 ${open ? "shadow-[5px_5px]" : ""}`}
+				className={`group border-1 p-4 my-1 hover:shadow-[5px_5px] hover:border-main shadow-black dark:shadow-white hover:shadow-main transition duration-200 overflow-hidden ${open ? "shadow-[5px_5px]" : ""}`}
+				onPointerDown={(e) => {
+					e.stopPropagation();
+					setOpen(!open);
+				}}
 			>
-				<div
-					className={`cursor-pointer flex items-center justify-between ${open ? "mb-4" : ""}`}
-					onPointerDown={(e) => {
-						e.stopPropagation();
-						setOpen(!open);
-					}}
-				>
+				<div className={`cursor-pointer flex items-center justify-between`}>
 					<div>
 						<h3 className="text-lg font-bold">{entry.title}</h3>
 						<h4 className="font-medium">{entry.subtitle}</h4>
 					</div>
-					{open ? (
-						<ChevronDown
-							width={32}
-							height={32}
-							className="group-hover:text-main transition duration-200"
-						/>
-					) : (
-						<ChevronRight
-							width={32}
-							height={32}
-							className="group-hover:text-main transition duration-200"
-						/>
-					)}
+					<ChevronRight
+						width={32}
+						height={32}
+						className={`group-hover:text-main transition duration-200 ${open ? "rotate-90" : "rotate-0"}`}
+					/>
 				</div>
-				{open && (
-					<ul className="list-disc list-inside p-2">
+				<div
+					className={`transition-all duration-200 ${open ? " max-h-screen" : " max-h-0"}`}
+				>
+					<ul className={`list-disc list-inside px-2 pt-4`}>
 						{entry.bullets.map((bullet, index) => (
 							<li key={index}>{bullet}</li>
 						))}
 					</ul>
-				)}
+				</div>
 			</div>
 		</div>
 	);
