@@ -19,9 +19,7 @@ export default function Blog() {
 					<p>Filter by tags:</p>
 					<ul className="flex gap-8">
 						{tags
-							.sort((a, b) =>
-								a.substring(3, a.length) > b.substring(3, b.length) ? 1 : -1,
-							)
+							.sort((a, b) => (a.split(" ")[1] > b.split(" ")[1] ? 1 : -1))
 							.map((tag) => (
 								<TagLink key={tag} tag={tag} />
 							))}

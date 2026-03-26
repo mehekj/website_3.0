@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export default function TagLink({ tag }: { tag: string }) {
-	const strippedTag = tag.substring(3, tag.length);
+	const strippedTag = tag.split(" ")[1];
 	const [selected, setSelected] = useState(false);
 
 	const toggleTag = () => {
