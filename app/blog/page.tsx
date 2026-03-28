@@ -1,7 +1,11 @@
 import SearchBar from "@/components/SearchBar";
 import TagLink from "@/components/TagLink";
+import Link from "next/link";
+import { getAllPosts } from "../utils/blog";
 
 export default function Blog() {
+	const posts = getAllPosts();
+
 	const tags = [
 		"🌯 restauranting",
 		"💯 lists",
@@ -27,6 +31,20 @@ export default function Blog() {
 				</div>
 				<div>
 					<SearchBar />
+				</div>
+				<div>
+					{posts.map((post) => (
+						<div key={post.slug} className="my-8">
+							<Link
+								href={`/blog/${post.slug}`}
+								className="text-2xl font-semibold"
+							>
+								{post.frontmatter.title}
+							</Link>
+							<p>{post.frontmatter.date}</p>
+							<p>{post.frontmatter.description}</p>
+						</div>
+					))}
 				</div>
 			</div>
 		</div>
