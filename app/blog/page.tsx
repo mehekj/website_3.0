@@ -25,15 +25,12 @@ export default function Blog() {
 							))}
 					</ul>
 				</div>
-				<div>
+				<div className="mb-20">
 					<SearchBar />
 				</div>
-				<div>
+				<div className="flex flex-col gap-10">
 					{posts.map((post, i) => (
-						<div
-							key={post.slug}
-							className="relative my-8 flex flex-col gap-2 ml-32"
-						>
+						<div key={post.slug} className="relative gap-2 flex flex-col ml-32">
 							{(i == 0 ||
 								posts[i - 1].frontmatter.date.split("/")[2] !==
 									post.frontmatter.date.split("/")[2]) && (
