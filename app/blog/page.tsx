@@ -6,13 +6,9 @@ import { getAllPosts } from "../utils/blog";
 export default function Blog() {
 	const posts = getAllPosts();
 
-	const tags = [
-		"🌯 restauranting",
-		"💯 lists",
-		"🎲 misc",
-		"🎨 arts & crafts",
-		"🤷‍♀️ life stuff",
-	];
+	const tags = Array.from(
+		new Set(posts.map((posts) => posts.frontmatter.tags).flat()),
+	);
 
 	return (
 		<div className="max-w-6xl m-auto px-12 py-24">
@@ -24,8 +20,8 @@ export default function Blog() {
 					<ul className="flex gap-8">
 						{tags
 							.sort((a, b) => (a.split(" ")[1] > b.split(" ")[1] ? 1 : -1))
-							.map((tag) => (
-								<TagLink key={tag} tag={tag} />
+							.map((tag, i) => (
+								<TagLink key={`${tag}${i}`} tag={tag} />
 							))}
 					</ul>
 				</div>
@@ -33,16 +29,35 @@ export default function Blog() {
 					<SearchBar />
 				</div>
 				<div>
-					{posts.map((post) => (
-						<div key={post.slug} className="my-8">
-							<Link
-								href={`/blog/${post.slug}`}
-								className="text-2xl font-semibold"
-							>
-								{post.frontmatter.title}
-							</Link>
-							<p>{post.frontmatter.date}</p>
-							<p>{post.frontmatter.description}</p>
+					{posts.map((post, i) => (
+						<div
+							key={post.slug}
+							className="relative my-8 flex flex-col gap-2 ml-32"
+						>
+							{(i == 0 ||
+								posts[i - 1].frontmatter.date.split("/")[2] !==
+									post.frontmatter.date.split("/")[2]) && (
+								<div className="absolute flex gap-4 items-center -left-32 top-1 text-sm font-medium">
+									<p>{post.frontmatter.date.split("/")[2]}</p>
+									<div className="-top-8 w-16 h-[2px] bg-black dark:bg-white"></div>
+								</div>
+							)}
+							<div className="flex justify-between items-baseline">
+								<Link
+									href={`/blog/${post.slug}`}
+									className="text-lg font-bold hover:text-main transition duration-200"
+								>
+									{post.frontmatter.title}
+								</Link>
+								<p className="font-medium text-sm">{post.frontmatter.date}</p>
+							</div>
+							<div className="flex gap-4">
+								{post.frontmatter.tags.map((tag: string, j: number) => (
+									<p key={`${tag}${i}${j}`} className="">
+										{tag}
+									</p>
+								))}
+							</div>
 						</div>
 					))}
 				</div>
