@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@types/mdx": "^2.0.13",
+    "fuse": "^0.12.1",
+    "fuse.js": "^7.1.0",
     "gray-matter": "^4.0.3",
     "next": "^16.2.1",
     "next-mdx-remote": "^6.0.0",

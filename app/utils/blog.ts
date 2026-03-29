@@ -5,11 +5,19 @@ import matter from "gray-matter";
 
 const BLOG_PATH = path.join(process.cwd(), "content", "_blog");
 
+export interface Post {
+    slug: string;
+    title: string;
+    date: string;
+    tags: string[];
+    content: string;
+}
+
 export function getPostSlugs() {
     return fs.readdirSync(BLOG_PATH).filter((file) => file.endsWith(".mdx"));
 }
 
-export function getPostFromSlug( slug: string ) {
+export function getPostFromSlug( slug: string ) : Post {
     const strippedSlug = slug.replace(/\.mdx$/, "");
     const filePath = path.join(BLOG_PATH, `${strippedSlug}.mdx`);
 
@@ -18,7 +26,9 @@ export function getPostFromSlug( slug: string ) {
 
     return {
         slug: strippedSlug,
-        frontmatter: data,
+        title: data.title,
+        date: data.date,
+        tags: data.tags,
         content,
     };
 }
@@ -27,5 +37,5 @@ export function getAllPosts() {
     const slugs = getPostSlugs();
     const posts = slugs.map((slug) => getPostFromSlug(slug));
     
-    return posts.sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+    return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }

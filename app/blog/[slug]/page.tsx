@@ -29,8 +29,8 @@ export default async function BlogPage({
 
 	return (
 		<div>
-			<h1>{post.frontmatter.title}</h1>
-			<p>{post.frontmatter.date}</p>
+			<h1>{post.title}</h1>
+			<p>{post.date}</p>
 			<div>{content}</div>
 		</div>
 	);

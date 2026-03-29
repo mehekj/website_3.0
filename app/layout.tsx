@@ -16,10 +16,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className={`${poppins.className}`}>
-			<body className="min-h-screen flex flex-col justify-between">
+			<body className="min-h-screen flex flex-col">
 				<NavBar />
-				<div>{children}</div>
-				<footer className="bottom-0 p-1 w-full text-center text-sm uppercase border-t-1">
+				<div className="flex flex-col flex-1 justify-start items-start">
+					{children}
+				</div>
+				<footer className="mt-auto p-1 w-full text-center text-sm uppercase border-t-1">
 					Made by Mehek Jethani 2026
 				</footer>
 			</body>
