@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function About() {
 	return (
 		<div className="max-w-6xl w-full m-auto px-8 py-12 md:py-32 h-full flex flex-col md:block">
-			<div className="peer w-96 h-96 relative overflow-hidden md:float-start md:relative mx-auto md:mr-12 md:mb-12 mb-8 border hover:translate-1.25 shadow-[10px_10px] hover:shadow-[0px_0px] shadow-black dark:shadow-white transition duration-200 cursor-pointer hover:shadow-main hover:border-main">
+			<div className="peer w-96 max-w-full aspect-square relative overflow-hidden md:float-start md:relative mx-auto md:mr-12 md:mb-12 mb-8 border hover:translate-1.25 shadow-[10px_10px] hover:shadow-[0px_0px] shadow-black dark:shadow-white transition duration-200 cursor-pointer hover:shadow-main hover:border-main">
 				<Image
 					src="/profile.jpeg"
 					alt="profile pic"
