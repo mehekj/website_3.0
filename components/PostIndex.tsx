@@ -63,35 +63,39 @@ export default function PostIndex({ posts }: { posts: Post[] }) {
 
 	return (
 		<div className="my-12">
-			<div className="my-8">
-				<div className="flex gap-16">
-					<p className="min-w-[120px]">Filter by tags:</p>
-					<ul className="flex flex-wrap gap-x-8 gap-y-2">
-						{tags
-							.sort((a, b) => (a.split(" ")[1] > b.split(" ")[1] ? 1 : -1))
-							.map((tag, i) => (
-								<TagLink key={i} tag={tag} clickable />
-							))}
-					</ul>
+			{posts.length > 0 && (
+				<div className="my-8">
+					<div className="flex gap-16">
+						<p className="min-w-30">Filter by tags:</p>
+						<ul className="flex flex-wrap gap-x-8 gap-y-2">
+							{tags
+								.sort((a, b) => (a.split(" ")[1] > b.split(" ")[1] ? 1 : -1))
+								.map((tag, i) => (
+									<TagLink key={i} tag={tag} clickable />
+								))}
+						</ul>
+					</div>
 				</div>
-			</div>
-			<div className="my-8 relative">
-				<div className="flex justify-between items-center group border-1 my-4 hover:translate-[-2px] hover:shadow-[5px_5px] hover:border-main shadow-black dark:shadow-white hover:shadow-main transition duration-200 overflow-hidden focus-within:shadow-[5px_5px] focus-within:translate-[-2px] w-full">
-					<input
-						className="outline-none w-full px-4 py-2"
-						placeholder="Search..."
-						value={search}
-						onChange={(e) => setSearch(e.target.value)}
-						onKeyDown={(e) => {
-							if (e.key == "Enter") {
-								const input = e.target as HTMLInputElement;
-								input.blur();
-							}
-						}}
-					></input>
-					<Search className="mr-2" width={20} height={20} />
+			)}
+			{posts.length > 0 && (
+				<div className="my-8 relative">
+					<div className="flex justify-between items-center group border my-4 hover:-translate-0.5 hover:shadow-[5px_5px] hover:border-main shadow-black dark:shadow-white hover:shadow-main transition duration-200 overflow-hidden focus-within:shadow-[5px_5px] focus-within:-translate-0.5 w-full">
+						<input
+							className="outline-none w-full px-4 py-2"
+							placeholder="Search..."
+							value={search}
+							onChange={(e) => setSearch(e.target.value)}
+							onKeyDown={(e) => {
+								if (e.key == "Enter") {
+									const input = e.target as HTMLInputElement;
+									input.blur();
+								}
+							}}
+						></input>
+						<Search className="mr-2" width={20} height={20} />
+					</div>
 				</div>
-			</div>
+			)}
 			<div className="flex flex-col gap-10">
 				{filteredPosts.length === 0 ? (
 					<p className="text-center opacity-50">No posts found.</p>
@@ -103,7 +107,7 @@ export default function PostIndex({ posts }: { posts: Post[] }) {
 									post.date.split("/")[2]) && (
 								<div className="absolute flex gap-4 items-center -left-32 top-1 text-sm font-medium">
 									<p>{post.date.split("/")[2]}</p>
-									<div className="-top-8 w-16 h-[2px] bg-black dark:bg-white"></div>
+									<div className="-top-8 w-16 h-0.5 bg-black dark:bg-white"></div>
 								</div>
 							)}
 							<div className="flex justify-between items-baseline">

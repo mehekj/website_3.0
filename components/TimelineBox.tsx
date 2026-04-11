@@ -17,12 +17,12 @@ export default function TimelineBox({ entry }: { entry: TimelineEntry }) {
 
 	return (
 		<div className="my-8 relative">
-			<div className="absolute -left-12 -translate-y-1/2 top-2 w-5 h-[2px] bg-black dark:bg-white" />
+			<div className="absolute -left-12 -translate-y-1/2 top-2 w-5 h-0.5 bg-black dark:bg-white" />
 			<p className="uppercase text-sm font-medium">
 				{entry.start} - {entry.end}
 			</p>
 			<div
-				className={`group border-1 p-4 my-1 hover:translate-[-2px] hover:shadow-[5px_5px] hover:border-main shadow-black dark:shadow-white hover:shadow-main transition duration-200 overflow-hidden ${open ? "shadow-[5px_5px] translate-[-2px]" : ""}`}
+				className={`group border p-4 my-1 hover:-translate-0.5 hover:shadow-[5px_5px] hover:border-main shadow-black dark:shadow-white hover:shadow-main transition duration-200 overflow-hidden ${open ? "shadow-[5px_5px] -translate-0.5" : ""}`}
 				onPointerDown={(e) => {
 					e.stopPropagation();
 					setOpen(!open);

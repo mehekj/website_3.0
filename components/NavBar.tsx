@@ -16,7 +16,7 @@ export default function NavBar() {
 	];
 
 	return (
-		<nav className="flex border-b-1 items-center justify-between h-14">
+		<nav className="flex border-b items-center justify-between h-14">
 			<div className="h-full">
 				<Link
 					href={"/"}
