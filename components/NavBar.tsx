@@ -16,7 +16,7 @@ export default function NavBar() {
 	];
 
 	return (
-		<nav className="flex border-b items-center justify-between h-14">
+		<nav className="flex flex-wrap md:flex-nowrap border-b items-center justify-between h-12 md:h-14 mb-12 md:mb-0 bg-black dark:bg-white md:bg-transparent md:dark:bg-transparent">
 			<div className="h-full">
 				<Link
 					href={"/"}
@@ -39,8 +39,8 @@ export default function NavBar() {
 					</svg>
 				</Link>
 			</div>
-			<div className="flex w-full h-full justify-end items-center">
-				<ul className="flex mx-4 font-medium">
+			<div className="flex w-full h-full justify-end items-center border-b md:border-0 order-1 md:order-0">
+				<ul className="flex md:mx-4 font-medium text-nowrap text-xs md:text-base">
 					{navLinks.map(([page, href], i) => (
 						<li
 							key={i}

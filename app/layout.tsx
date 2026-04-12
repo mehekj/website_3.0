@@ -21,7 +21,7 @@ export default function RootLayout({
 				<div className="flex flex-col flex-1 justify-start items-start w-full">
 					{children}
 				</div>
-				<footer className="mt-auto p-1 w-full text-center text-sm uppercase border-t">
+				<footer className="mt-auto p-1 w-full text-center text-xs uppercase border-t">
 					Made by Mehek Jethani 2026
 				</footer>
 			</body>
