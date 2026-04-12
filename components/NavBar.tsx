@@ -40,13 +40,13 @@ export default function NavBar() {
 				</Link>
 			</div>
 			<div className="flex w-full h-full justify-end items-center border-b md:border-0 order-1 md:order-0">
-				<ul className="flex md:mx-4 font-medium text-nowrap text-xs md:text-base">
+				<ul className="flex md:mx-4 font-medium text-nowrap text-xs sm:text-sm md:text-base overflow-x-auto w-full h-full justify-around md:justify-end items-center">
 					{navLinks.map(([page, href], i) => (
 						<li
 							key={i}
 							className={`${
 								pathname === href ? "underline" : ""
-							} underline-offset-4 uppercase mx-4`}
+							} underline-offset-4 uppercase mx-2 md:mx-4`}
 						>
 							<Link href={href}>{page}</Link>
 						</li>

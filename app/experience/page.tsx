@@ -73,8 +73,7 @@ export default function Experience() {
 			start: "09/2016",
 			end: "06/2020",
 			title: "Bergen County Academies",
-			subtitle:
-				"High School Diploma - Academy for Engineering and Design Technology (AEDT)",
+			subtitle: "High School Diploma",
 			bullets: [
 				"lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
 				"lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
@@ -92,8 +91,10 @@ export default function Experience() {
 	];
 
 	return (
-		<div className="max-w-6xl w-full m-auto px-8 py-24">
-			<h1 className="font-bold text-5xl">I am employed! And educated! Yay!</h1>
+		<div className="max-w-6xl w-full m-auto px-8 py-12 md:py-24">
+			<h1 className="font-bold text-4xl md:text-5xl">
+				I am employed! And educated! Yay!
+			</h1>
 			<p className="my-4">and incredibly lucky for it</p>
 			<div className="my-16">
 				<h2 className="font-bold text-3xl">Work Experience</h2>
