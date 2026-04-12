@@ -21,7 +21,7 @@ export default function ProjectCard({ info }: { info: ProjectInfo }) {
 					src={info.cover}
 					loop
 					muted
-					className="absolute top-0 left-0 w-full h-full object-cover saturate-25 group-hover:saturate-150 transition duration-200 pointer-events-none"
+					className="absolute top-0 left-0 w-full h-full object-cover saturate-25 group-hover:saturate-150 transition duration-200"
 					onPointerEnter={(e) => {
 						const video = e.currentTarget as HTMLVideoElement;
 						video.play();
@@ -29,6 +29,9 @@ export default function ProjectCard({ info }: { info: ProjectInfo }) {
 					onPointerLeave={(e) => {
 						const video = e.currentTarget as HTMLVideoElement;
 						video.pause();
+					}}
+					onPointerDown={(e) => {
+						e.preventDefault();
 					}}
 				/>
 			</div>
