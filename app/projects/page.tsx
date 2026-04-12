@@ -49,7 +49,7 @@ export default function Projects() {
 				here&apos;s some projects I&apos;ve actually finished (there&apos;s many
 				more)
 			</p>
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12 md:my-16">
 				{projects.map((project, i) => (
 					<ProjectCard key={i} info={project} />
 				))}

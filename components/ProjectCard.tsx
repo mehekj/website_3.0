@@ -10,7 +10,7 @@ export interface ProjectInfo {
 }
 
 export default function ProjectCard({ info }: { info: ProjectInfo }) {
-	const gridCols = info.full ? `col-span-2` : "col-span-1";
+	const gridCols = info.full ? `md:col-span-2` : "col-span-1";
 
 	return (
 		<div
@@ -25,13 +25,13 @@ export default function ProjectCard({ info }: { info: ProjectInfo }) {
 				/>
 			</div>
 			<div className="p-6 border-[0.5] border-inherit">
-				<div className="flex justify-between items-baseline">
+				<div className="flex flex-col md:flex-row justify-between items-baseline">
 					<h3 className="text-2xl font-bold mb-2">{info.title}</h3>
-					<p className="uppercase text-sm font-medium">
+					<p className="uppercase text-xs md:text-sm mb-2 font-medium">
 						{info.start} - {info.end}
 					</p>
 				</div>
-				<p>{info.blurb}</p>
+				<p className="text-sm md:text-base">{info.blurb}</p>
 			</div>
 		</div>
 	);

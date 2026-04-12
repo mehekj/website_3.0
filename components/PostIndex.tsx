@@ -21,7 +21,7 @@ export default function PostIndex({ posts }: { posts: Post[] }) {
 	}) => {
 		return (
 			<li
-				className={`inline-block transition duration-200 ${selectedTags.includes(tag) ? "text-main underline font-medium" : ""} ${clickable ? "hover:text-main cursor-pointer" : "cursor-default"}`}
+				className={`inline-block transition duration-200 text-sm md:text-base ${selectedTags.includes(tag) ? "text-main underline font-medium" : ""} ${clickable ? "hover:text-main cursor-pointer" : "cursor-default"}`}
 				onPointerDown={() => clickable && toggleTag(tag)}
 			>
 				{tag}
@@ -65,9 +65,9 @@ export default function PostIndex({ posts }: { posts: Post[] }) {
 		<div className="my-12">
 			{posts.length > 0 && (
 				<div className="my-8">
-					<div className="flex gap-16">
+					<div className="flex flex-col text-center sm:flex-row gap-8 md:gap-16">
 						<p className="min-w-30">Filter by tags:</p>
-						<ul className="flex flex-wrap gap-x-8 gap-y-2">
+						<ul className="flex flex-wrap justify-center sm:justify-start gap-x-8 gap-y-2">
 							{tags
 								.sort((a, b) => (a.split(" ")[1] > b.split(" ")[1] ? 1 : -1))
 								.map((tag, i) => (
@@ -101,23 +101,27 @@ export default function PostIndex({ posts }: { posts: Post[] }) {
 					<p className="text-center opacity-50">No posts found.</p>
 				) : (
 					filteredPosts.map((post, i) => (
-						<div key={post.slug} className="relative gap-2 flex flex-col ml-32">
+						<div
+							key={post.slug}
+							className="relative gap-2 flex flex-col sm:ml-32"
+						>
 							{(i == 0 ||
 								filteredPosts[i - 1].date.split("/")[2] !==
 									post.date.split("/")[2]) && (
-								<div className="absolute flex gap-4 items-center -left-32 top-1 text-sm font-medium">
+								<div className="sm:absolute flex gap-4 items-center sm:-left-32 sm:top-1 text-xs sm:text-sm font-medium my-8 sm:my-0">
+									<div className="sm:hidden w-full sm:-top-8 sm:w-16 h-0.5 bg-black dark:bg-white"></div>
 									<p>{post.date.split("/")[2]}</p>
-									<div className="-top-8 w-16 h-0.5 bg-black dark:bg-white"></div>
+									<div className="w-full sm:-top-8 sm:w-16 h-0.5 bg-black dark:bg-white"></div>
 								</div>
 							)}
-							<div className="flex justify-between items-baseline">
+							<div className="flex flex-col sm:flex-row justify-between items-baseline gap-2 sm:gap-4">
 								<Link
 									href={`/blog/${post.slug}`}
-									className="text-lg font-bold hover:text-main transition duration-200"
+									className="sm:text-lg font-bold order-last sm:order-first hover:text-main transition duration-200"
 								>
 									{post.title}
 								</Link>
-								<p className="font-medium text-sm">{post.date}</p>
+								<p className="font-medium text-xs sm:text-sm">{post.date}</p>
 							</div>
 							<div className="flex gap-4">
 								{post.tags.map((tag: string, j: number) => (

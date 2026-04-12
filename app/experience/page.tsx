@@ -96,12 +96,12 @@ export default function Experience() {
 				I am employed! And educated! Yay!
 			</h1>
 			<p className="my-4">and incredibly lucky for it</p>
-			<div className="my-16">
-				<h2 className="font-bold text-3xl">Work Experience</h2>
+			<div className="my-12 md:my-16">
+				<h2 className="font-bold text-2xl md:text-3xl">Work Experience</h2>
 				<Timeline entries={jobData} />
 			</div>
 			<div className="my-16">
-				<h2 className="font-bold text-3xl">Education</h2>
+				<h2 className="font-bold text-2xl md:text-3xl">Education</h2>
 				<Timeline entries={schoolData} />
 			</div>
 		</div>

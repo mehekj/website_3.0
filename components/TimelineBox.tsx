@@ -17,8 +17,8 @@ export default function TimelineBox({ entry }: { entry: TimelineEntry }) {
 
 	return (
 		<div className="my-8 relative">
-			<div className="absolute -left-12 -translate-y-1/2 top-2 w-5 h-0.5 bg-black dark:bg-white" />
-			<p className="uppercase text-sm font-medium">
+			<div className="absolute -left-8 md:-left-12 -translate-y-1/2 top-2 w-5 h-0.5 bg-black dark:bg-white" />
+			<p className="uppercase text-xs md:text-sm font-medium">
 				{entry.start} - {entry.end}
 			</p>
 			<div
@@ -30,8 +30,10 @@ export default function TimelineBox({ entry }: { entry: TimelineEntry }) {
 			>
 				<div className={`cursor-pointer flex items-center justify-between`}>
 					<div>
-						<h3 className="text-lg font-bold">{entry.title}</h3>
-						<h4 className="font-medium">{entry.subtitle}</h4>
+						<h3 className="md:text-lg font-bold">{entry.title}</h3>
+						<h4 className="text-sm md:text-base font-medium">
+							{entry.subtitle}
+						</h4>
 					</div>
 					<ChevronRight
 						width={32}
@@ -45,7 +47,9 @@ export default function TimelineBox({ entry }: { entry: TimelineEntry }) {
 						e.stopPropagation();
 					}}
 				>
-					<ul className={`list-disc list-inside px-2 pt-4`}>
+					<ul
+						className={`list-disc list-outside ml-4 px-2 pt-4 text-sm md:text-base`}
+					>
 						{entry.bullets.map((bullet, index) => (
 							<li key={index}>{bullet}</li>
 						))}
