@@ -1,11 +1,11 @@
-import Image from "next/image";
+"use client";
 
 export interface ProjectInfo {
 	start: string;
 	end: string;
 	title: string;
 	blurb: string;
-	image: string;
+	cover: string;
 	full?: boolean;
 }
 
@@ -17,11 +17,19 @@ export default function ProjectCard({ info }: { info: ProjectInfo }) {
 			className={`group border-[0.5] my-1 hover:-translate-0.5 hover:shadow-[5px_5px] hover:border-main shadow-black dark:shadow-white hover:shadow-main transition duration-200 cursor-pointer ${gridCols}`}
 		>
 			<div className="relative overflow-hidden border-[0.5] border-inherit min-h-72">
-				<Image
-					src={info.image}
-					alt={info.title}
-					fill={true}
-					className="object-cover saturate-25 group-hover:saturate-100 transition duration-200"
+				<video
+					src={info.cover}
+					loop
+					muted
+					className="absolute top-0 left-0 w-full h-full object-cover saturate-25 group-hover:saturate-150 transition duration-200"
+					onPointerEnter={(e) => {
+						const video = e.currentTarget as HTMLVideoElement;
+						video.play();
+					}}
+					onPointerLeave={(e) => {
+						const video = e.currentTarget as HTMLVideoElement;
+						video.pause();
+					}}
 				/>
 			</div>
 			<div className="p-6 border-[0.5] border-inherit">

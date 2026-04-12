@@ -7,7 +7,7 @@ export default function Projects() {
 			end: "Present",
 			title: "Project 1",
 			blurb: "Next.js, Tailwind CSS, TypeScript",
-			image: "/profile.jpeg",
+			cover: "/test.MOV",
 			full: true,
 		},
 		{
@@ -15,28 +15,28 @@ export default function Projects() {
 			end: "Present",
 			title: "Project 1",
 			blurb: "Next.js, Tailwind CSS, TypeScript",
-			image: "/profile.jpeg",
+			cover: "/test.MOV",
 		},
 		{
 			start: "03/2025",
 			end: "Present",
 			title: "Project 1",
 			blurb: "Next.js, Tailwind CSS, TypeScript",
-			image: "/profile.jpeg",
+			cover: "/test.MOV",
 		},
 		{
 			start: "03/2025",
 			end: "Present",
 			title: "Project 1",
 			blurb: "Next.js, Tailwind CSS, TypeScript",
-			image: "/profile.jpeg",
+			cover: "/test.MOV",
 		},
 		{
 			start: "03/2025",
 			end: "Present",
 			title: "Project 1",
 			blurb: "Next.js, Tailwind CSS, TypeScript",
-			image: "/profile.jpeg",
+			cover: "/test.MOV",
 		},
 	];
 
