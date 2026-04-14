@@ -8,8 +8,8 @@ export default function Experience() {
 			title: "Technology Analyst Intern",
 			subtitle: "Morgan Stanley",
 			bullets: [
-				"lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
-				"lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+				"Restored and revamped Enterprise Computing Services department website using HTML/CSS/JS and Bootstrap.",
+				"Maintained an online inventory of company database services.",
 			],
 		},
 		{
@@ -74,10 +74,7 @@ export default function Experience() {
 			end: "06/2020",
 			title: "Bergen County Academies",
 			subtitle: "High School Diploma",
-			bullets: [
-				"lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
-				"lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
-			],
+			bullets: ["Academy for Engineering Design Technology (AEDT)"],
 		},
 		{
 			start: "09/2020",
@@ -85,7 +82,7 @@ export default function Experience() {
 			title: "Brown University",
 			subtitle: "Sc.B. Computer Science",
 			bullets: [
-				"lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+				"Courses: Advanced Computer Graphics, Computer Vision, Computational Photography, Deep Learning, Computational Linguistics, UI/UX, Operating Systems, Fundamentals of Computer Systems, Data Structures and Algorithms",
 			],
 		},
 	];
