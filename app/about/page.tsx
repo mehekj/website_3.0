@@ -33,9 +33,9 @@ export default function About() {
 				the Dash research group.
 			</p>
 			<p className="my-4 text-justify">
-				Aside from coding and playing video games, you can usually find me
-				watching too much TV, board gaming, reading, picking up assorted arts
-				and crafts projects, and playing the violin poorly.
+				Aside from coding, you can usually find me watching too much TV,
+				reading, picking up assorted arts and crafts projects, gaming (of both
+				the board and video varieties), and playing the violin poorly.
 			</p>
 		</div>
 	);
