@@ -1,4 +1,3 @@
-import ProfileOverlay from "@/components/ProfileOverlay";
 import Image from "next/image";
 
 export default function About() {
@@ -13,7 +12,12 @@ export default function About() {
 						className="w-full h-full object-cover scale-150 group-hover:saturate-25"
 					/>
 				</div>
-				<ProfileOverlay />
+				<Image
+					src="/profileoverlay.gif"
+					alt="overlay"
+					fill={true}
+					className="absolute inset-0 w-full scale-150 z-10 opacity-0 peer-hover:opacity-100 pointer-events-none peer-hover:translate-1.25 transition-transform duration-200"
+				/>
 			</div>
 			<h1 className="font-bold text-4xl md:text-5xl mb-4 order-first">
 				Hello! I&apos;m Mehek
