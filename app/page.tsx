@@ -7,7 +7,7 @@ export default function Home() {
 				<div className="absolute overflow-hidden w-120 max-w-full aspect-video">
 					<Image
 						className="w-full h-full object-cover"
-						src="/construction.gif"
+						src="/images/construction.gif"
 						alt="soodeeupdoodeeupdigidigidada"
 						fill={true}
 					/>

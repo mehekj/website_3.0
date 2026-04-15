@@ -6,14 +6,14 @@ export default function About() {
 			<div className="w-96 max-w-full relative md:float-start md:relative mx-auto md:mr-12 md:mb-12 mb-8">
 				<div className="peer group relative overflow-hidden aspect-square border hover:translate-1.25 shadow-[10px_10px] hover:shadow-[0px_0px] shadow-black dark:shadow-white transition duration-200 cursor-pointer hover:shadow-main hover:border-main">
 					<Image
-						src="/profile.jpeg"
+						src="/images/profile.jpeg"
 						alt="profile pic"
 						fill={true}
 						className="w-full h-full object-cover scale-150 group-hover:saturate-25"
 					/>
 				</div>
 				<Image
-					src="/profileoverlay.gif"
+					src="/images/profileoverlay.gif"
 					alt="overlay"
 					fill={true}
 					className="absolute inset-0 w-full scale-150 z-10 opacity-0 peer-hover:opacity-100 pointer-events-none peer-hover:translate-1.25 transition-transform duration-200"
