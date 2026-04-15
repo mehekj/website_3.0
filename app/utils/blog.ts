@@ -2,7 +2,6 @@ import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
 
-
 const BLOG_PATH = path.join(process.cwd(), "content", "_blog");
 
 export interface Post {
